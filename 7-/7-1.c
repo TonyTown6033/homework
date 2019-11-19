@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "packages.c"
 void main()
 {
   int gcd(int ,int );
@@ -16,15 +17,18 @@ void main()
 
 int gcd(int a,int b)         //greatest common divisor
 {
-  int i;
-  int m,n;
-  m=0, n=0;
-  for (i=1;m==0 && n==0;i++){
-      m=a%i;
-      n=b%i;
-      printf("here 1\nm=%d n=%d\n i=%d" ,m,n,i);
-  }
-  return i;
+    extern void maxandswap(int,int);
+    int c=0;
+    printf("%d\n",b);
+    if(a%2==0 && b%2==0){
+      a=a/2;
+      b=b/2;
+    }
+    maxandswap(a,b);
+    if (a/b==2 && a%b==0)
+      c=b;
+    else  gcd(b,a-b);
+    return b;
 }
 
 int lcm(int a,int b)          //least common multiple
