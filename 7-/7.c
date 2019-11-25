@@ -18,21 +18,21 @@ void sel (char a[],char b[])
    int i=0,u=0;
    // m=strlen(a); n=strlen(b);
    while (a[i] != '\0'){
-     if (a[i]=='a' ){
+     if (a[i]=='a'||a[i]=='A' ){
      b[u]=a[i];
      u++;
     }
-    if(a[i]=='e' ){
+    if(a[i]=='e' || a[i]=='E'){
      b[u]=a[i];
      u++;
     }
-    if(a[i]=='i' ){
+    if(a[i]=='i' || a[i]=='I'){
      b[u]=a[i];
      u++;
-    }if(a[i]=='o' ){
+    }if(a[i]=='o' || a[i]=='O'){
      b[u]=a[i];
      u++;
-    }if(a[i]=='u' ){
+    }if(a[i]=='u' || a[i]=='U' ){
      b[u]=a[i];
      u++;
     }
