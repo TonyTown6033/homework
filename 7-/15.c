@@ -7,7 +7,7 @@ struct work
 
 int main()
 {
-  struct work int a[10];
+  struct work a[10];
   int i,j;
   struct work temp;
   for (i=0;i<10;i++){
@@ -23,24 +23,26 @@ int main()
     }
   }
 
-  int search(struct work int a[],int,int);
+  int search(struct work a[],int,int);
   int worktemp,k;
-  printf("please input the worknum \n",);
+  printf("please input the worknum \n");
   scanf("%d",worktemp );
-  k=search(struct work int a[10],worktemp,10);
+  k=search(a,worktemp,10);
   printf("the worker you want whos name is %s\n",a[k].name );
   return 0;
 }
 
-int search(struct work int a[],int h,int n){
+int search(struct work a[],int h,int n){
   int i,len=n/2;
   for (i=len;i!=0;){
     if (h<a[i].worknum)
-    {len=len/2;i=len}
+    {len=len/2;i=len;}
     if(h>a[i].worknum)
-    {len=len*3/2;i=len}
+    {len=len*3/2;i=len;}
     if(h==a[i].worknum)
     {h=i;break;}
+    if(len>n||len<0)
+      printf("no result\n" );
   return h;
   }
 
