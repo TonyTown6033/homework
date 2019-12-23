@@ -1,54 +1,67 @@
 #include <stdio.h>
-
-extern const int p_num;
-extern const int a_num;
-extern ave1[p_num];
 int main ()
 {
-  void input(int,int);
-  input (p_num,a_num);
-  float score[p_num][a_num];
-  void ave(int b[][a_num]);
-  ave(score[p_num][a_num]);
-  void arrange(float a[p_num]);
-
-  arrange(ave1);
+  void input(void);
+  input ();
+  void ave();
+  ave();
+  void arrange(void);
+  void judge(void);
+  judge();
+  arrange();
 
 }
-
-void input(int a,int b){
+// float score[p_num][a_num];
+// extern float score[p_num][a_num];
+int p_num,a_num;
+void input(void){
+  int a,b;
   printf("please input the number of the player and judge,use block to divide them\n" );
   scanf("%d %d",&a,&b );
   printf("input complete\n" );
-  const int p_num=a;
-  const int a_num=b;
+  p_num=a;
+  a_num=b;
+}
+
+float score[p_num][a_num];
+void judge(){
+  int i,j;
+  for(i=0;i<p_num;i++){
+    for(j=0;j<a_num;j++){
+      printf("let %d judgement judge for %d player\n",j,i );
+      scanf("%f",&score[i][j]);
+      printf("data input successfully\n" );
+      }
+  }
 }
 //尽量保留原始数据
-void ave(int b[p_num][a_num]){
+// extern float score[p_num][a_num];
+float ave1[p_num];
+void ave(){
   int i,j;
   int temp;
-  float ave1[p_num],temp2=0.0;
+  float temp2=0.0;
   for(i=0;i<p_num;i++){
     for(j=1;j<a_num;j++){
-      if(b[i][j]<=b[i][j-1])
-        {temp=b[i][j-1];b[i][j-1]=b[i][j];b[i][j]=temp;}
+      if(score[i][j]<=score[i][j-1])
+        {temp=score[i][j-1];score[i][j-1]=score[i][j];score[i][j]=temp;}
     }
   }
   for(i=0;i<p_num;i++){
     for(j=1;j<a_num-1;j++){
-      temp2+=b[i][j];
+      temp2+=score[i][j];
     }
     temp2=temp2/(a_num-2);
     ave1[i]=temp2;
     temp2=0.0;
   }
 }
-
-void arrange(float a[p_num]){
+// extern float ave1[p_num];
+void arrange(void){
   float c[p_num][2];
   int i,temp;
   for (i=0;i<p_num;i++)
-    {c[i][0]=a[i];c[i][1]=i;}
+    {c[i][0]=ave1[i];c[i][1]=i;}
   for(i=1;i<p_num;i++){
     if(c[i][0]>=c[i-1][0])
     {c[i][0]=temp;c[i][0]=c[i-1][0];c[i-1][0]=temp;
