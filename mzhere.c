@@ -15,15 +15,12 @@ int main ()
 // extern float score[p_num][a_num];
 int p_num,a_num;
 void input(void){
-  int a,b;
   printf("please input the number of the player and judge,use block to divide them\n" );
-  scanf("%d %d",&a,&b );
+  scanf("%d %d",&p_num,&a_num );
   printf("input complete\n" );
-  p_num=a;
-  a_num=b;
 }
 
-float score[p_num][a_num];
+float score[100][100];
 void judge(){
   int i,j;
   for(i=0;i<p_num;i++){
@@ -36,10 +33,10 @@ void judge(){
 }
 //尽量保留原始数据
 // extern float score[p_num][a_num];
-float ave1[p_num];
+float ave1[100];
 void ave(){
   int i,j;
-  int temp;
+  float temp;
   float temp2=0.0;
   for(i=0;i<p_num;i++){
     for(j=1;j<a_num;j++){
