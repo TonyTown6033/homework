@@ -2,17 +2,15 @@
 int main ()
 {
   void input(void);
-  input ();
   void ave();
-  ave();
   void arrange(void);
   void judge(void);
+  input ();
+  ave();
   judge();
   arrange();
 
 }
-// float score[p_num][a_num];
-// extern float score[p_num][a_num];
 int p_num,a_num;
 void input(void){
   printf("please input the number of the player and judge,use block to divide them\n" );
@@ -31,8 +29,7 @@ void judge(){
       }
   }
 }
-//尽量保留原始数据
-// extern float score[p_num][a_num];
+
 float ave1[100];
 void ave(){
   int i,j;
@@ -53,7 +50,7 @@ void ave(){
     temp2=0.0;
   }
 }
-// extern float ave1[p_num];
+
 void arrange(void){
   float c[p_num][2];
   int i,temp;
