@@ -56,12 +56,16 @@ void arrange(void){
   int i,temp;
   for (i=0;i<p_num;i++)
     {c[i][0]=ave1[i];c[i][1]=i+1;}
+    for (i=0;i<p_num;i++){
+      printf("%f %f\n",c[i][0],c[i][1]);
+    }
   for(i=1;i<p_num;i++){
     if(c[i][0]>c[i-1][0])
-    {c[i][0]=temp;c[i][0]=c[i-1][0];c[i-1][0]=temp;
-     c[i][1]=temp;c[i][1]=c[i-1][1];c[i-1][1]=temp;}
+    {temp=c[i][0];c[i][0]=c[i-1][0];c[i-1][0]=temp;
+     temp=c[i][1];c[i][1]=c[i-1][1];c[i-1][1]=temp;}
    }
   printf("Ranking         number          ave score\n");
   for (i=0;i<p_num;i++)
     printf(" %d         %f          %f\n",i+1,c[i][1],c[i][0] );
+
 }
