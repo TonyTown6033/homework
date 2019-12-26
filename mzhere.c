@@ -52,7 +52,7 @@ void ave(){
 }
 
 void arrange(void){
-  float c[p_num][2];
+  float c[100][2];
   int i,temp;
   for (i=0;i<p_num;i++)
     {c[i][0]=ave1[i];c[i][1]=i;}
