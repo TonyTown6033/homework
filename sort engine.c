@@ -14,7 +14,7 @@ int main()
   scanf("%s",filename );
 
   if((fp=fopen(filename,"r"))==NULL)
-    {
+    {1
       printf("can not open this file\n" );
       exit(0);
     }
